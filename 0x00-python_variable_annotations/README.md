@@ -17,6 +17,6 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - How to validate your code with mypy
 
 ## :pencil: **Author**
-### :man: Yidnekachew Bantrga
+### :man: Mo
 - [Github](https://github.com/mokouchaoui)
 - [Linkedin](https://www.linkedin.com/in/kouchaoui/)
