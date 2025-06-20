@@ -1,0 +1,14 @@
+<h2>Unread Messages</h2>
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>
+                <strong>From: {{ message.sender.username }}</strong><br>
+                {{ message.content }}<br>
+                <em>Sent: {{ message.timestamp }}</em>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No unread messages.</p>
+{% endif %}

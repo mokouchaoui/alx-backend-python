@@ -1,0 +1,8 @@
+# python ignore file
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+**/migrations/
+**/.env
+db.sqlite3

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Thread</title>
+    <style>
+      p {
+        margin: 10px 10px 0 10px;
+        padding: 10px 10px 0 10px;
+      }
+
+        h2 {
+            margin-left: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Thread</h2>
+      {% for message in messages %}
+        <div style="border-left: 1px solid rgb(218, 136, 136); border-top: 1px solid rgb(218, 136, 136); margin-left: 20px; padding-left: 10px;">
+            <div style="display: flex;">
+            <p><strong>From:</strong> {{ message.sender.username }}</p>
+            <p><strong>To:</strong> {{ message.receiver.username }}</p>
+            </div>
+            <div style="display: flex; message">
+            <p><strong>Content:</strong> {{ message.content }}</p>
+            <p><strong>Timestamp:</strong> {{ message.timestamp }}</p>
+            </div>
+            <div style="display: flex; message">
+            <p><strong>Unread:</strong> {{ message.is_read }}</p>
+            <p><strong>Edited:</strong> {{ message.edited }}</p>
+            </div>
+          {% if message.replies.all %}
+          <div style="margin-left: 20px">
+            {% include 'replies.html' with messages=message.replies.all only %}
+          </div>
+          {% endif %}
+        {% endfor %}
+    </div>
+  </body>
+</html>
